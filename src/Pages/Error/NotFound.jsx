@@ -1,9 +1,13 @@
 import { Link } from "react-router";
+import HelmetComponent from "../../Components/SEO/HelmetComponent";
 
 export default function NotFound() {
   return (
     <div className="mt-24 bg-orange-50 flex flex-col items-center justify-center px-4 text-center">
-
+      <HelmetComponent
+        title="Page Not Found"
+        description="Oops! This page doesn't exist on Scrawl."
+      />
       {/* Big doodle */}
       <div className="text-8xl mb-6 animate-bounce">🖍️</div>
 
@@ -17,7 +21,8 @@ export default function NotFound() {
         Oops! This wall doesn't exist.
       </h2>
       <p className="text-gray-400 text-sm max-w-sm leading-relaxed">
-        Looks like someone scrawled the wrong address. The page you're looking for has either been erased or never existed.
+        Looks like someone scrawled the wrong address. The page you're looking
+        for has either been erased or never existed.
       </p>
 
       {/* Actions */}
@@ -34,7 +39,6 @@ export default function NotFound() {
       <p className="text-xs text-gray-300 my-10">
         Maybe write about it on the wall? 😄
       </p>
-
     </div>
   );
 }

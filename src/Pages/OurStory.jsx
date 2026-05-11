@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router";
+import HelmetComponent from "../Components/SEO/HelmetComponent";
 
 const steps = [
   {
@@ -29,15 +31,35 @@ const steps = [
 ];
 
 const values = [
-  { emoji: "🫶", title: "Kindness first", desc: "Every feature is built around making people feel heard, not judged." },
-  { emoji: "🎭", title: "True anonymity", desc: "No accounts, no tracking, no way to trace a post back to you." },
-  { emoji: "🌈", title: "Safe space", desc: "Basic content filters and rate limiting keep the wall warm and welcoming." },
-  { emoji: "✨", title: "Impermanence", desc: "Seasonal posts fade away — a reminder that feelings pass too." },
+  {
+    emoji: "🫶",
+    title: "Kindness first",
+    desc: "Every feature is built around making people feel heard, not judged.",
+  },
+  {
+    emoji: "🎭",
+    title: "True anonymity",
+    desc: "No accounts, no tracking, no way to trace a post back to you.",
+  },
+  {
+    emoji: "🌈",
+    title: "Safe space",
+    desc: "Basic content filters and rate limiting keep the wall warm and welcoming.",
+  },
+  {
+    emoji: "✨",
+    title: "Impermanence",
+    desc: "Seasonal posts fade away — a reminder that feelings pass too.",
+  },
 ];
 
 export default function OurStory() {
   return (
     <div className="min-h-screen bg-orange-50">
+      <HelmetComponent
+        title="Our Story"
+        description="Learn about how Scrawl started and what we stand for."
+      />
 
       {/* Hero */}
       <section className="max-w-2xl mx-auto px-4 pt-16 pb-12 text-center">
@@ -46,7 +68,8 @@ export default function OurStory() {
           A wall for every feeling.
         </h1>
         <p className="text-gray-500 text-base leading-relaxed max-w-md mx-auto">
-          Scrawl is an anonymous public wall where you can post your thoughts, feelings, and little moments — freely, safely, and without judgment.
+          Scrawl is an anonymous public wall where you can post your thoughts,
+          feelings, and little moments — freely, safely, and without judgment.
         </p>
         <Link
           to="/wall"
@@ -69,16 +92,28 @@ export default function OurStory() {
         </div>
         <div className="bg-white rounded-2xl border border-orange-100 shadow-sm p-7 space-y-4 text-gray-600 text-sm leading-relaxed">
           <p>
-            Scrawl started with a simple question: <span className="font-semibold text-gray-700">what if there was a place where you could say anything — without worrying about what people think of you?</span>
+            Scrawl started with a simple question:{" "}
+            <span className="font-semibold text-gray-700">
+              what if there was a place where you could say anything — without
+              worrying about what people think of you?
+            </span>
           </p>
           <p>
-            We've all had moments where we just needed to get something off our chest. A crush we never confessed. A hard week we got through alone. A small joy we wanted to share but didn't know how. Social media makes everything feel permanent and performative. Scrawl is the opposite of that.
+            We've all had moments where we just needed to get something off our
+            chest. A crush we never confessed. A hard week we got through alone.
+            A small joy we wanted to share but didn't know how. Social media
+            makes everything feel permanent and performative. Scrawl is the
+            opposite of that.
           </p>
           <p>
-            Think of it like a corkboard in a cozy café, or a brick wall covered in chalk messages from strangers. Nobody signs their name. Everyone belongs. It's messy, honest, and human.
+            Think of it like a corkboard in a cozy café, or a brick wall covered
+            in chalk messages from strangers. Nobody signs their name. Everyone
+            belongs. It's messy, honest, and human.
           </p>
           <p>
-            We built Scrawl because the world needs more spaces where you can just <span className="font-semibold text-gray-700">be</span> — without an audience, without a follower count, without pressure.
+            We built Scrawl because the world needs more spaces where you can
+            just <span className="font-semibold text-gray-700">be</span> —
+            without an audience, without a follower count, without pressure.
           </p>
         </div>
       </section>
@@ -107,7 +142,9 @@ export default function OurStory() {
       <section className="max-w-2xl mx-auto px-4 pb-20">
         <div className="flex items-center gap-3 mb-6">
           <span className="text-3xl">⚙️</span>
-          <h2 className="text-2xl font-extrabold text-gray-800">How it Works</h2>
+          <h2 className="text-2xl font-extrabold text-gray-800">
+            How it Works
+          </h2>
         </div>
         <div className="flex flex-col gap-4">
           {steps.map(({ emoji, title, desc }, i) => (
@@ -119,10 +156,14 @@ export default function OurStory() {
                 <div className="w-10 h-10 rounded-full bg-orange-100 border border-orange-200 flex items-center justify-center text-xl">
                   {emoji}
                 </div>
-                <span className="text-xs font-bold text-orange-300">0{i + 1}</span>
+                <span className="text-xs font-bold text-orange-300">
+                  0{i + 1}
+                </span>
               </div>
               <div>
-                <h3 className="font-extrabold text-gray-700 text-sm mb-1">{title}</h3>
+                <h3 className="font-extrabold text-gray-700 text-sm mb-1">
+                  {title}
+                </h3>
                 <p className="text-gray-400 text-xs leading-relaxed">{desc}</p>
               </div>
             </div>
@@ -133,7 +174,9 @@ export default function OurStory() {
       {/* CTA */}
       <section className="bg-white border-t border-orange-100 py-14 text-center px-4">
         <div className="text-4xl mb-4">🌟</div>
-        <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Ready to scrawl something?</h2>
+        <h2 className="text-2xl font-extrabold text-gray-800 mb-2">
+          Ready to scrawl something?
+        </h2>
         <p className="text-gray-400 text-sm mb-7 max-w-xs mx-auto">
           No sign up. No judgment. Just your words on the wall.
         </p>
@@ -144,7 +187,6 @@ export default function OurStory() {
           🧱 Go to The Wall
         </Link>
       </section>
-
     </div>
   );
 }

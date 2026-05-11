@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ComposerForm from "../../Components/ComposerForm";
 import PostController from "../../Controller/PostController";
 import ReactController from "../../Controller/ReactController";
+import HelmetComponent from "../../Components/SEO/HelmetComponent";
 
 const REACTIONS = [
   { emoji: "🤍", label: "felt this" },
@@ -117,6 +118,11 @@ export default function SeasonalWalls() {
 
   return (
     <div className="min-h-screen bg-orange-50">
+      <HelmetComponent
+        title="The Wall"
+        description="Post your thoughts anonymously on the Scrawl wall."
+      />
+
       <main className="max-w-2xl mx-auto px-4 py-6 flex flex-col gap-4">
         {/* Composer */}
         <ComposerForm

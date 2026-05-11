@@ -1,8 +1,16 @@
 import { Link } from "react-router";
- 
-export default function CloseWalls({ board = { label: "This Wall", emoji: "🧱" } }) {
+import HelmetComponent from "../../Components/SEO/HelmetComponent";
+
+export default function CloseWalls({
+  board = { label: "This Wall", emoji: "🧱" },
+}) {
   return (
     <div className="mt-28 bg-orange-50 flex flex-col items-center justify-center px-4 text-center">
+      <HelmetComponent
+        title="Wall Not Open"
+        description="This wall is not currently open for posting."
+      />
+
       {/* Icon */}
       <div className="text-7xl mb-4">🔒</div>
 
